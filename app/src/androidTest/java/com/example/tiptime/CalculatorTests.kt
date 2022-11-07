@@ -35,11 +35,11 @@ class CalculatorTests {
 
     @Test
     fun calculate_20_percent_tip() {
-        onView(withId(R.id.option_twenty_percent))
-            .perform(click())
         onView(withId(R.id.cost_of_service_edit_text))
             .perform(typeText("100.00"))
             .perform(ViewActions.closeSoftKeyboard())
+        onView(withId(R.id.option_twenty_percent))
+            .perform(click())
         onView(withId(R.id.calculate_button))
             .perform(click())
         onView(withId(R.id.tip_result))
@@ -48,11 +48,11 @@ class CalculatorTests {
 
     @Test
     fun calculate_15_percent_tip() {
-        onView(withId(R.id.option_fifteen_percent))
-            .perform(click())
         onView(withId(R.id.cost_of_service_edit_text))
             .perform(typeText("100.00"))
             .perform(ViewActions.closeSoftKeyboard())
+        onView(withId(R.id.option_fifteen_percent))
+            .perform(click())
         onView(withId(R.id.calculate_button))
             .perform(click())
         onView(withId(R.id.tip_result))
@@ -61,13 +61,13 @@ class CalculatorTests {
 
     @Test
     fun calculate_20_no_round() {
+        onView(withId(R.id.cost_of_service_edit_text))
+            .perform(typeText("99.00"))
+            .perform(ViewActions.closeSoftKeyboard())
         onView(withId(R.id.option_twenty_percent))
             .perform(click())
         onView(withId(R.id.round_up_switch))
             .perform(click())
-        onView(withId(R.id.cost_of_service_edit_text))
-            .perform(typeText("99.00"))
-            .perform(ViewActions.closeSoftKeyboard())
         onView(withId(R.id.calculate_button))
             .perform(click())
         onView(withId(R.id.tip_result))
@@ -76,13 +76,13 @@ class CalculatorTests {
 
     @Test
     fun calculate_18_no_round() {
+        onView(withId(R.id.cost_of_service_edit_text))
+            .perform(typeText("99.00"))
+            .perform(ViewActions.closeSoftKeyboard())
         onView(withId(R.id.option_eighteen_percent))
             .perform(click())
         onView(withId(R.id.round_up_switch))
             .perform(click())
-        onView(withId(R.id.cost_of_service_edit_text))
-            .perform(typeText("99.00"))
-            .perform(ViewActions.closeSoftKeyboard())
         onView(withId(R.id.calculate_button))
             .perform(click())
         onView(withId(R.id.tip_result))
@@ -91,13 +91,13 @@ class CalculatorTests {
 
     @Test
     fun calculate_15_no_round() {
+        onView(withId(R.id.cost_of_service_edit_text))
+            .perform(typeText("99.00"))
+            .perform(ViewActions.closeSoftKeyboard())
         onView(withId(R.id.option_fifteen_percent))
             .perform(click())
         onView(withId(R.id.round_up_switch))
             .perform(click())
-        onView(withId(R.id.cost_of_service_edit_text))
-            .perform(typeText("99.00"))
-            .perform(ViewActions.closeSoftKeyboard())
         onView(withId(R.id.calculate_button))
             .perform(click())
         onView(withId(R.id.tip_result))
@@ -106,13 +106,13 @@ class CalculatorTests {
 
     @Test
     fun calculate_18_large_number() {
+        onView(withId(R.id.cost_of_service_edit_text))
+            .perform(typeText("99999.11"))
+            .perform(ViewActions.closeSoftKeyboard())
         onView(withId(R.id.option_eighteen_percent))
             .perform(click())
         onView(withId(R.id.round_up_switch))
             .perform(click())
-        onView(withId(R.id.cost_of_service_edit_text))
-            .perform(typeText("99999.11"))
-            .perform(ViewActions.closeSoftKeyboard())
         onView(withId(R.id.calculate_button))
             .perform(click())
         onView(withId(R.id.tip_result))
